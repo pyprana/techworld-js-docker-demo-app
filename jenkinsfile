@@ -1,0 +1,48 @@
+// Jenkins file format
+// Instead of createing jenkins on ui you will write a file a script as a file called as pipeline as a code. 
+// SO jenkins file is pipeline as a code 
+// - Scripted line
+// Jenkins file can be written as a scripted pipeline or declarative pipeline
+// Scripted
+//= first syntax
+//= groovy engine
+//- Advanced scripting capabilities, high flexiility
+//-difficult to start
+// Declarative
+// Required field of Jenkins file
+//Pipeline must be top leve;
+//Agent - Where to execute.
+//stages - where the work happens.
+
+
+pipeline {
+
+    agent any
+
+    stages {
+
+        stage("build") {
+
+            steps {
+            // NPM installation steps go here
+            // sh npm install
+            // sh install build
+                echo 'Building the application'               
+            }
+        }
+
+        stage("test") {
+
+            steps {
+                echo 'Testing the application'
+            }
+
+        stage("deploy") {
+            echo 'Deploying the application'
+            steps {
+
+            }
+        }
+        }
+    }
+}
